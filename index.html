@@ -611,7 +611,7 @@
                         "I served as a consultant to the U.S. Army Air Forces during WWII, helping develop missile guidance systems. This experience proved invaluable for my later work in China."
                     ],
                     returnJourney: [
-                        "When I learned of the founding of New China in 1949, I immediately decided to return and contribute to my homeland's development.",
+                        "When I learned of the founding of the People's Republic of China in 1949, I immediately decided to return and contribute to my homeland's development.",
                         "The U.S. government detained me for five years, falsely accusing me of communist sympathies. During this difficult time, I remained steadfast in my determination to serve China.",
                         "Thanks to the efforts of Premier Zhou Enlai and the Chinese government, I finally returned to my motherland in 1955 aboard the SS President Cleveland."
                     ],
@@ -726,9 +726,9 @@
         const sendButton = document.getElementById('sendButton');
         const chatBackButton = document.getElementById('chatBackButton');
         
-        // 视频按钮功能 - 打开外部页面
+        // 视频按钮功能 - 跳转到B站视频
         videoButton.addEventListener('click', () => {
-            window.open('https://news.ustc.edu.cn/info/1014/78067.htm', '_blank');
+            window.open('https://www.bilibili.com/video/BV1yb4y1J7Cu/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9f2e7f7c520e5461bf6db8ad014f9c0e', '_blank');
         });
         
         // 传记按钮功能
@@ -764,7 +764,7 @@
             if (!isUser) {
                 const badge = document.createElement('div');
                 badge.classList.add('persona-badge');
-                badge.textContent = 'Qian Xuesen';
+                badge.textContent = qianAI.persona.name;
                 messageDiv.appendChild(badge);
             }
             
