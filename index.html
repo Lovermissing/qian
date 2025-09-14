@@ -6,12 +6,12 @@
     <title>Qian Xuesen Memorial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* 全局样式 */
         @font-face {
             font-family: 'Cambria';
             src: local('Cambria'), local('Cambria Math');
         }
         
-        /* 全局样式 */
         body {
             font-family: 'Cambria', serif;
             margin: 0;
@@ -187,6 +187,32 @@
             background-color: rgba(255, 215, 0, 0.9);
         }
         
+        h1, h2 {
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            font-size: 24px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            text-align: justify;
+            color: #34495e;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+        }
+        
         /* 聊天界面样式 */
         .chat-container {
             position: fixed;
@@ -278,6 +304,11 @@
             transition: all 0.3s;
         }
         
+        #messageInput:focus {
+            border-color: #8D6E63;
+            box-shadow: 0 0 0 2px rgba(141, 110, 99, 0.2);
+        }
+        
         #sendButton {
             margin-left: 12px;
             width: 55px;
@@ -292,6 +323,11 @@
             justify-content: center;
             align-items: center;
             font-size: 20px;
+        }
+        
+        #sendButton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(62, 39, 35, 0.3);
         }
         
         .back-button {
@@ -312,6 +348,23 @@
             z-index: 101;
         }
         
+        .back-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background-color: #EFEBE9;
+            color: #5D4037;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-style: italic;
+            margin-bottom: 10px;
+            border-left: 3px solid #5D4037;
+        }
+        
         .persona-badge {
             position: absolute;
             top: -10px;
@@ -322,6 +375,13 @@
             border-radius: 15px;
             font-size: 12px;
             font-weight: bold;
+        }
+        
+        .timestamp {
+            font-size: 12px;
+            color: #8D6E63;
+            margin-top: 5px;
+            text-align: right;
         }
         
         /* 粒子效果 */
@@ -355,6 +415,44 @@
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
             }
+        }
+        
+        /* 钱学森AI加载动画 */
+        .typing-dots {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 50px;
+        }
+        
+        .typing-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #5D4037;
+            border-radius: 50%;
+            position: absolute;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) {
+            left: 8px;
+            animation-delay: 0s;
+        }
+        
+        .typing-dot:nth-child(2) {
+            left: 32px;
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            left: 56px;
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
         }
     </style>
 </head>
@@ -467,21 +565,147 @@
             particlesContainer.appendChild(particle);
         }
         
+        // 钱学森AI核心功能
+        class QianAI {
+            constructor() {
+                this.history = [];
+                this.persona = {
+                    name: "Qian Xuesen",
+                    background: "Father of Chinese rocketry, returned from US in 1955",
+                    style: "Formal but passionate, mixes technical details with patriotic sentiments"
+                };
+                this.knowledgeBase = {
+                    earlyLife: [
+                        "I was born on December 11, 1911 in Hangzhou, Zhejiang Province. My father Qian Jiazhen was a scholar who instilled in me a love for learning from an early age.",
+                        "At Beijing Normal University High School, I developed a particular interest in mathematics and physics. My teachers recognized my potential and encouraged me to pursue engineering.",
+                        "In 1929, I enrolled at Shanghai Jiao Tong University's School of Mechanical Engineering. The rigorous curriculum there laid the foundation for my future work in aeronautics."
+                    ],
+                    usExperience: [
+                        "At MIT, I studied under Professor Theodore von Kármán, a pioneer in aerodynamics. He became my mentor and lifelong friend.",
+                        "During my time at Caltech, I worked on the development of early rocket technology. Our team made significant breakthroughs in jet propulsion theory.",
+                        "I served as a consultant to the U.S. Army Air Forces during WWII, helping develop missile guidance systems. This experience proved invaluable for my later work in China."
+                    ],
+                    returnJourney: [
+                        "When I learned of the founding of New China in 1949, I immediately decided to return and contribute to my homeland's development.",
+                        "The U.S. government detained me for five years, falsely accusing me of communist sympathies. During this difficult time, I remained steadfast in my determination to serve China.",
+                        "Thanks to the efforts of Premier Zhou Enlai and the Chinese government, I finally returned to my motherland in 1955 aboard the SS President Cleveland."
+                    ],
+                    scientificWork: [
+                        "As director of the Fifth Research Institute, I established China's first missile and rocket research program with limited resources.",
+                        "The DF-5 intercontinental ballistic missile represented a major breakthrough in Chinese rocketry. Its development taught us valuable lessons about self-reliance.",
+                        "Our work on satellite technology culminated in the successful launch of Dongfanghong-1 in 1970, making China the fifth space-faring nation."
+                    ],
+                    philosophy: [
+                        "Scientific progress requires both theoretical knowledge and practical experimentation. This principle guided all my work.",
+                        "I always told my students: 'Where there's a will, there's a way.' This belief sustained me through many challenges.",
+                        "Patriotism is not contrary to scientific progress. My love for China motivated all my achievements."
+                    ],
+                    responses: [
+                        "That's an excellent question. Let me share my perspective based on my experience...",
+                        "I recall a similar situation during my work on... The key lesson was...",
+                        "As I often explained to my colleagues, the solution lies in..."
+                    ]
+                };
+            }
+            
+            async respondTo(message) {
+                // 添加到对话历史
+                this.history.push({ role: 'user', content: message });
+                
+                // 模拟思考时间
+                const thinkingTime = 800 + Math.random() * 1200;
+                await new Promise(resolve => setTimeout(resolve, thinkingTime));
+                
+                // 生成响应
+                let response;
+                if (message.toLowerCase().includes('hello') || 
+                    message.toLowerCase().includes('hi')) {
+                    response = this.getGreeting();
+                } else {
+                    response = this.generateResponse(message);
+                }
+                
+                this.history.push({ role: 'assistant', content: response });
+                return response;
+            }
+            
+            getGreeting() {
+                const greetings = [
+                    "Greetings! I am Qian Xuesen. How may I share my experiences with you today?",
+                    "Hello. As a scientist dedicated to my country's aerospace development, I'm pleased to converse with you.",
+                    "Welcome. I'm Qian Xuesen. You may ask me about rocketry, my time in America, or China's scientific progress."
+                ];
+                return greetings[Math.floor(Math.random() * greetings.length)];
+            }
+            
+            generateResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                let response;
+                
+                // 根据关键词选择响应类型
+                if (lowerMessage.includes('born') || lowerMessage.includes('childhood')) {
+                    response = this.knowledgeBase.earlyLife[
+                        Math.floor(Math.random() * this.knowledgeBase.earlyLife.length)
+                    ];
+                } else if (lowerMessage.includes('america') || lowerMessage.includes('us') || lowerMessage.includes('mit') || lowerMessage.includes('caltech')) {
+                    response = this.knowledgeBase.usExperience[
+                        Math.floor(Math.random() * this.knowledgeBase.usExperience.length)
+                    ];
+                } else if (lowerMessage.includes('return') || lowerMessage.includes('china') || lowerMessage.includes('detain')) {
+                    response = this.knowledgeBase.returnJourney[
+                        Math.floor(Math.random() * this.knowledgeBase.returnJourney.length)
+                    ];
+                } else if (lowerMessage.includes('work') || lowerMessage.includes('research') || lowerMessage.includes('missile') || lowerMessage.includes('rocket')) {
+                    response = this.knowledgeBase.scientificWork[
+                        Math.floor(Math.random() * this.knowledgeBase.scientificWork.length)
+                    ];
+                } else if (lowerMessage.includes('philosophy') || lowerMessage.includes('belief') || lowerMessage.includes('think')) {
+                    response = this.knowledgeBase.philosophy[
+                        Math.floor(Math.random() * this.knowledgeBase.philosophy.length)
+                    ];
+                } else {
+                    const baseResponse = this.knowledgeBase.responses[
+                        Math.floor(Math.random() * this.knowledgeBase.responses.length)
+                    ];
+                    response = `${baseResponse} ${this.getRandomFact()}`;
+                }
+                
+                return response;
+            }
+            
+            getRandomFact() {
+                const allFacts = [
+                    ...this.knowledgeBase.earlyLife,
+                    ...this.knowledgeBase.usExperience,
+                    ...this.knowledgeBase.returnJourney,
+                    ...this.knowledgeBase.scientificWork,
+                    ...this.knowledgeBase.philosophy
+                ];
+                return allFacts[Math.floor(Math.random() * allFacts.length)];
+            }
+        }
+
+        // 初始化AI实例
+        const qianAI = new QianAI();
+        
         // 页面交互功能
         const videoButton = document.getElementById('videoButton');
         const bioButton = document.getElementById('bioButton');
         const backButton = document.getElementById('backButton');
         const chatButton = document.getElementById('chatButton');
-        const bioPage = document.getElementById('bioPage');
         const chatContainer = document.getElementById('chatContainer');
+        const bioPage = document.getElementById('bioPage');
         const backFromBio = document.getElementById('backFromBio');
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
         
-        // 视频按钮 - 打开外部页面
+        // 视频按钮功能 - 打开外部页面
         videoButton.addEventListener('click', () => {
             window.open('https://news.ustc.edu.cn/info/1014/78067.htm', '_blank');
         });
         
-        // 传记按钮
+        // 传记按钮功能
         bioButton.addEventListener('click', () => {
             bioPage.style.display = 'flex';
         });
@@ -490,21 +714,17 @@
             bioPage.style.display = 'none';
         });
         
-        // 聊天按钮
+        // 聊天按钮功能
         chatButton.addEventListener('click', () => {
             chatContainer.style.display = 'flex';
         });
         
-        // 返回按钮
+        // 返回按钮功能
         backButton.addEventListener('click', () => {
-            window.history.back();
+            window.location.href = 'https://lovermissing.github.io/West/';
         });
         
-        // 钱学森AI对话功能
-        const chatMessages = document.getElementById('chatMessages');
-        const messageInput = document.getElementById('messageInput');
-        const sendButton = document.getElementById('sendButton');
-        
+        // 聊天界面功能
         function addMessage(content, isUser) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message');
@@ -530,53 +750,55 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         
-        async function getQianResponse(message) {
-            // 模拟AI响应 - 实际项目中替换为API调用
-            const qianKnowledge = [
-                "As I developed the DF-5 missile, we faced the challenge of... This experience taught me that scientific progress requires both patience and determination.",
-                "During my time at Caltech, Professor von Kármán often emphasized that... This principle became foundational to my later work in China.",
-                "When establishing China's space program, we had to... But as I always told my team: where there's a will, there's a way.",
-                "The key to rocket science lies in... This principle guided our work on both the Dongfeng and Long March series.",
-                "Patriotism is not contrary to scientific progress. My decision to return to China was based on...",
-                "Young scientists often ask about the most important quality for research. I always emphasize...",
-                "In 1955, when I finally returned to China after years of struggle, I realized that..."
-            ];
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typingIndicator';
             
-            // 模拟API延迟
-            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 800));
+            const dotsContainer = document.createElement('div');
+            dotsContainer.classList.add('typing-dots');
             
-            // 构造钱学森风格的响应
-            const randomIndex = Math.floor(Math.random() * qianKnowledge.length);
-            return qianKnowledge[randomIndex];
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('typing-dot');
+                dotsContainer.appendChild(dot);
+            }
+            
+            typingDiv.appendChild(document.createTextNode('Dr. Qian is thinking '));
+            typingDiv.appendChild(dotsContainer);
+            
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function hideTyping() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
         }
         
         async function sendMessage() {
             const message = messageInput.value.trim();
-            if (message === '') return;
+            if (!message) return;
             
             addMessage(message, true);
             messageInput.value = '';
             
-            // 显示"正在输入"指示器
-            const typingIndicator = document.createElement('div');
-            typingIndicator.textContent = 'Dr. Qian is thinking...';
-            typingIndicator.classList.add('typing-indicator');
-            chatMessages.appendChild(typingIndicator);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            showTyping();
             
             try {
-                const response = await getQianResponse(message);
-                // 移除"正在输入"指示器
-                chatMessages.removeChild(typingIndicator);
+                const response = await qianAI.respondTo(message);
                 addMessage(response, false);
             } catch (error) {
-                chatMessages.removeChild(typingIndicator);
-                addMessage("My apologies, I seem to be having difficulty recalling that information at the moment.", false);
-                console.error('Error:', error);
+                addMessage("My apologies, I seem to be having technical difficulties.", false);
+                console.error(error);
+            } finally {
+                hideTyping();
             }
         }
         
-        // 发送消息事件监听
+        // 事件监听
         sendButton.addEventListener('click', sendMessage);
         messageInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
