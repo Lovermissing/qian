@@ -476,6 +476,70 @@
             transform: scale(1.1);
             background-color: white;
         }
+        
+        /* 视频页面样式 */
+        .video-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .video-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 80%;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .video-title {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 5px white, 0 0 10px white;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 101;
+        }
+        
+        .video-back-button:hover {
+            transform: scale(1.1);
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -567,6 +631,17 @@
             <button id="sendButton">
                 <i class="fas fa-paper-plane"></i>
             </button>
+        </div>
+    </div>
+    
+    <!-- 视频页面 -->
+    <div class="video-page" id="videoPage">
+        <button class="video-back-button" id="videoBackButton">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="video-container">
+            <div class="video-title">The Eternal East Wind - Documentary</div>
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -725,33 +800,43 @@
         const messageInput = document.getElementById('messageInput');
         const sendButton = document.getElementById('sendButton');
         const chatBackButton = document.getElementById('chatBackButton');
+        const videoPage = document.getElementById('videoPage');
+        const videoFrame = document.getElementById('videoFrame');
+        const videoBackButton = document.getElementById('videoBackButton');
         
-        // 视频按钮功能 - 跳转到B站视频
-        videoButton.addEventListener('click', () => {
-            window.open('https://www.bilibili.com/video/BV1yb4y1J7Cu/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9f2e7f7c520e5461bf6db8ad014f9c0e', '_blank');
+        // 视频按钮功能 - 在当前页面打开视频
+        videoButton.addEventListener('click', function() {
+            videoFrame.src = 'https://www.bilibili.com/video/BV1yb4y1J7Cu/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9f2e7f7c520e5461bf6db8ad014f9c0e';
+            videoPage.style.display = 'flex';
+        });
+        
+        // 视频返回按钮功能
+        videoBackButton.addEventListener('click', function() {
+            videoFrame.src = '';
+            videoPage.style.display = 'none';
         });
         
         // 传记按钮功能
-        bioButton.addEventListener('click', () => {
+        bioButton.addEventListener('click', function() {
             bioPage.style.display = 'flex';
         });
         
-        backFromBio.addEventListener('click', () => {
+        backFromBio.addEventListener('click', function() {
             bioPage.style.display = 'none';
         });
         
         // 聊天按钮功能
-        chatButton.addEventListener('click', () => {
+        chatButton.addEventListener('click', function() {
             chatContainer.style.display = 'flex';
         });
         
         // 聊天返回按钮功能
-        chatBackButton.addEventListener('click', () => {
+        chatBackButton.addEventListener('click', function() {
             chatContainer.style.display = 'none';
         });
         
         // 返回按钮功能
-        backButton.addEventListener('click', () => {
+        backButton.addEventListener('click', function() {
             window.history.back();
         });
         
@@ -831,7 +916,7 @@
         
         // 事件监听
         sendButton.addEventListener('click', sendMessage);
-        messageInput.addEventListener('keypress', (e) => {
+        messageInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 sendMessage();
             }
