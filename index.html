@@ -6,7 +6,6 @@
     <title>Qian Xuesen Memorial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 全局样式 */
         @font-face {
             font-family: 'Cambria';
             src: local('Cambria'), local('Cambria Math');
@@ -24,7 +23,6 @@
             position: relative;
         }
         
-        /* 主页面样式 */
         .main-title {
             position: absolute;
             top: 20%;
@@ -454,6 +452,30 @@
             0%, 60%, 100% { transform: translateY(0); }
             30% { transform: translateY(-8px); }
         }
+        
+        /* 聊天返回按钮样式 */
+        .chat-back-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 101;
+            border: none;
+        }
+        
+        .chat-back-button:hover {
+            transform: scale(1.1);
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -526,6 +548,9 @@
     
     <!-- 聊天界面 -->
     <div class="chat-container" id="chatContainer">
+        <button class="chat-back-button" id="chatBackButton">
+            <i class="fas fa-times"></i>
+        </button>
         <div class="chat-header">
             Dialogue with Dr. Qian Xuesen
         </div>
@@ -699,6 +724,7 @@
         const chatMessages = document.getElementById('chatMessages');
         const messageInput = document.getElementById('messageInput');
         const sendButton = document.getElementById('sendButton');
+        const chatBackButton = document.getElementById('chatBackButton');
         
         // 视频按钮功能 - 打开外部页面
         videoButton.addEventListener('click', () => {
@@ -719,9 +745,14 @@
             chatContainer.style.display = 'flex';
         });
         
+        // 聊天返回按钮功能
+        chatBackButton.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+        });
+        
         // 返回按钮功能
         backButton.addEventListener('click', () => {
-            window.location.href = 'https://lovermissing.github.io/West/';
+            window.history.back();
         });
         
         // 聊天界面功能
