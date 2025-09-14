@@ -6,11 +6,7 @@
     <title>Qian Xuesen Memorial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @font-face {
-            font-family: 'Cambria';
-            src: local('Cambria'), local('Cambria Math');
-        }
-        
+        /* 全局样式 */
         body {
             font-family: 'Cambria', serif;
             margin: 0;
@@ -23,6 +19,7 @@
             position: relative;
         }
         
+        /* 主标题样式 */
         .main-title {
             position: absolute;
             top: 20%;
@@ -42,6 +39,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* 按钮容器 */
         .button-container {
             position: absolute;
             width: 100%;
@@ -52,6 +50,7 @@
             z-index: 1;
         }
         
+        /* 主按钮样式 */
         .main-button {
             width: 80px;
             height: 80px;
@@ -77,6 +76,7 @@
             background-color: rgba(255, 255, 255, 0.9);
         }
         
+        /* 角落按钮样式 */
         .corner-button {
             position: absolute;
             width: 60px;
@@ -103,6 +103,7 @@
             background-color: rgba(255, 255, 255, 0.9);
         }
         
+        /* 按钮位置 */
         .top-left {
             top: 20px;
             left: 20px;
@@ -169,6 +170,7 @@
             transform: scale(1.1);
         }
         
+        /* 图标颜色 */
         .icon-1 {
             background-color: rgba(100, 149, 237, 0.9);
         }
@@ -185,6 +187,7 @@
             background-color: rgba(255, 215, 0, 0.9);
         }
         
+        /* 标题样式 */
         h1, h2 {
             color: #2c3e50;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
@@ -203,6 +206,7 @@
             padding-bottom: 10px;
         }
         
+        /* 段落样式 */
         p {
             line-height: 1.6;
             font-size: 18px;
@@ -249,12 +253,6 @@
             flex-direction: column;
             gap: 15px;
             background-color: #FFF8E1;
-            background-image: 
-                linear-gradient(rgba(215, 204, 200, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(215, 204, 200, 0.3) 1px, transparent 1px),
-                radial-gradient(circle at 20% 30%, rgba(141, 110, 99, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(93, 64, 55, 0.05) 0%, transparent 20%);
-            background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
         }
         
         .message {
@@ -328,6 +326,7 @@
             box-shadow: 0 5px 15px rgba(62, 39, 35, 0.3);
         }
         
+        /* 返回按钮样式 */
         .back-button {
             position: fixed;
             top: 20px;
@@ -351,6 +350,7 @@
             background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
         }
         
+        /* 打字指示器 */
         .typing-indicator {
             display: none;
             align-self: flex-start;
@@ -363,6 +363,7 @@
             border-left: 3px solid #5D4037;
         }
         
+        /* 人物徽章 */
         .persona-badge {
             position: absolute;
             top: -10px;
@@ -375,6 +376,7 @@
             font-weight: bold;
         }
         
+        /* 时间戳 */
         .timestamp {
             font-size: 12px;
             color: #8D6E63;
@@ -413,68 +415,6 @@
                 transform: translateY(-100vh) translateX(100px);
                 opacity: 0;
             }
-        }
-        
-        /* 钱学森AI加载动画 */
-        .typing-dots {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 50px;
-        }
-        
-        .typing-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #5D4037;
-            border-radius: 50%;
-            position: absolute;
-            animation: typingAnimation 1.4s infinite ease-in-out;
-        }
-        
-        .typing-dot:nth-child(1) {
-            left: 8px;
-            animation-delay: 0s;
-        }
-        
-        .typing-dot:nth-child(2) {
-            left: 32px;
-            animation-delay: 0.2s;
-        }
-        
-        .typing-dot:nth-child(3) {
-            left: 56px;
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes typingAnimation {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-8px); }
-        }
-        
-        /* 聊天返回按钮样式 */
-        .chat-back-button {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 101;
-            border: none;
-        }
-        
-        .chat-back-button:hover {
-            transform: scale(1.1);
-            background-color: white;
         }
         
         /* 视频页面样式 */
@@ -612,8 +552,8 @@
     
     <!-- 聊天界面 -->
     <div class="chat-container" id="chatContainer">
-        <button class="chat-back-button" id="chatBackButton">
-            <i class="fas fa-times"></i>
+        <button class="back-button" id="chatBackButton">
+            <i class="fas fa-arrow-left"></i>
         </button>
         <div class="chat-header">
             Dialogue with Dr. Qian Xuesen
@@ -636,7 +576,7 @@
     
     <!-- 视频页面 -->
     <div class="video-page" id="videoPage">
-        <button class="video-back-button" id="videoBackButton">
+        <button class="back-button" id="videoBackButton">
             <i class="fas fa-arrow-left"></i>
         </button>
         <div class="video-container">
@@ -804,7 +744,7 @@
         const videoFrame = document.getElementById('videoFrame');
         const videoBackButton = document.getElementById('videoBackButton');
         
-        // 视频按钮功能 - 在当前页面打开视频
+        // 视频按钮功能
         videoButton.addEventListener('click', function() {
             videoFrame.src = 'https://www.bilibili.com/video/BV1yb4y1J7Cu/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9f2e7f7c520e5461bf6db8ad014f9c0e';
             videoPage.style.display = 'flex';
@@ -821,6 +761,7 @@
             bioPage.style.display = 'flex';
         });
         
+        // 传记返回按钮功能
         backFromBio.addEventListener('click', function() {
             bioPage.style.display = 'none';
         });
@@ -835,9 +776,9 @@
             chatContainer.style.display = 'none';
         });
         
-        // 返回按钮功能
+        // 左下角返回按钮功能 - 跳转到指定网址
         backButton.addEventListener('click', function() {
-            window.history.back();
+            window.location.href = 'https://lovermissing.github.io/West/';
         });
         
         // 聊天界面功能
