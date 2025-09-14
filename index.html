@@ -140,7 +140,7 @@
             right: 20px;
         }
         
-        .video-container {
+        .external-page {
             position: fixed;
             top: 0;
             left: 0;
@@ -153,13 +153,16 @@
             z-index: 100;
         }
         
-        .video-wrapper {
+        .external-wrapper {
             position: relative;
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
+            height: 90%;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
         }
         
-        .video-title {
+        .external-title {
             position: absolute;
             top: -40px;
             left: 0;
@@ -170,12 +173,13 @@
             text-shadow: 0 0 5px white, 0 0 10px white;
         }
         
-        video {
+        iframe {
             width: 100%;
-            border-radius: 8px;
+            height: 100%;
+            border: none;
         }
         
-        .close-video {
+        .close-external {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -189,9 +193,10 @@
             align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            z-index: 101;
         }
         
-        .close-video:hover {
+        .close-external:hover {
             transform: scale(1.1);
             background-color: white;
         }
@@ -244,6 +249,22 @@
         
         .bio-icon:hover {
             transform: scale(1.1);
+        }
+        
+        .icon-1 {
+            background-color: rgba(100, 149, 237, 0.9); /* Cornflower blue */
+        }
+        
+        .icon-2 {
+            background-color: rgba(144, 238, 144, 0.9); /* Light green */
+        }
+        
+        .icon-3 {
+            background-color: rgba(255, 182, 193, 0.9); /* Light pink */
+        }
+        
+        .icon-4 {
+            background-color: rgba(255, 215, 0, 0.9); /* Gold */
         }
         
         h1, h2 {
@@ -315,14 +336,11 @@
         <i class="fas fa-comment-dots"></i>
     </div>
     
-    <div class="video-container" id="videoContainer">
-        <div class="video-wrapper">
-            <div class="video-title">The Eternal East Wind</div>
-            <video controls id="qianVideo">
-                <source src="images/qian.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button class="close-video" id="closeVideo">
+    <div class="external-page" id="externalPage">
+        <div class="external-wrapper">
+            <div class="external-title">The Eternal East Wind</div>
+            <iframe id="externalFrame" src="" frameborder="0"></iframe>
+            <button class="close-external" id="closeExternal">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -336,7 +354,7 @@
             <h1>Qian Xuesen: A Life of Science and Patriotism</h1>
             
             <div class="bio-section">
-                <div class="bio-icon">
+                <div class="bio-icon icon-1">
                     <i class="fas fa-book"></i>
                 </div>
                 <h2>Early Education and Academic Achievements</h2>
@@ -345,7 +363,7 @@
             </div>
             
             <div class="bio-section">
-                <div class="bio-icon">
+                <div class="bio-icon icon-2">
                     <i class="fas fa-flag"></i>
                 </div>
                 <h2>The Journey Home and Scientific Contributions</h2>
@@ -354,7 +372,7 @@
             </div>
             
             <div class="bio-section">
-                <div class="bio-icon">
+                <div class="bio-icon icon-3">
                     <i class="fas fa-heart"></i>
                 </div>
                 <h2>Patriotism and Noble Character</h2>
@@ -363,7 +381,7 @@
             </div>
             
             <div class="bio-section">
-                <div class="bio-icon">
+                <div class="bio-icon icon-4">
                     <i class="fas fa-award"></i>
                 </div>
                 <h2>Honors and Legacy</h2>
@@ -393,20 +411,20 @@
             particlesContainer.appendChild(particle);
         }
         
-        // Video button functionality
+        // Video button functionality - now opens external page
         const videoButton = document.getElementById('videoButton');
-        const videoContainer = document.getElementById('videoContainer');
-        const closeVideo = document.getElementById('closeVideo');
-        const qianVideo = document.getElementById('qianVideo');
+        const externalPage = document.getElementById('externalPage');
+        const externalFrame = document.getElementById('externalFrame');
+        const closeExternal = document.getElementById('closeExternal');
         
         videoButton.addEventListener('click', () => {
-            videoContainer.style.display = 'flex';
-            qianVideo.play();
+            externalPage.style.display = 'flex';
+            externalFrame.src = 'https://news.ustc.edu.cn/info/1014/78067.htm';
         });
         
-        closeVideo.addEventListener('click', () => {
-            videoContainer.style.display = 'none';
-            qianVideo.pause();
+        closeExternal.addEventListener('click', () => {
+            externalPage.style.display = 'none';
+            externalFrame.src = '';
         });
         
         // Bio button functionality
