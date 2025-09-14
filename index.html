@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qian Xuesen Tribute</title>
+    <title>Qian Xuesen Memorial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @font-face {
@@ -11,6 +11,7 @@
             src: local('Cambria'), local('Cambria Math');
         }
         
+        /* 全局样式 */
         body {
             font-family: 'Cambria', serif;
             margin: 0;
@@ -23,6 +24,7 @@
             position: relative;
         }
         
+        /* 主页面样式 */
         .main-title {
             position: absolute;
             top: 20%;
@@ -35,44 +37,11 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             z-index: 1;
             animation: fadeIn 2s ease-in-out;
-            letter-spacing: 1px;
         }
         
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
         }
         
         .button-container {
@@ -97,7 +66,6 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 2;
-            position: relative;
         }
         
         .main-button i {
@@ -109,10 +77,6 @@
         .main-button:hover {
             transform: scale(1.1);
             background-color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .main-button:hover i {
-            transform: scale(1.2);
         }
         
         .corner-button {
@@ -141,10 +105,6 @@
             background-color: rgba(255, 255, 255, 0.9);
         }
         
-        .corner-button:hover i {
-            transform: scale(1.2);
-        }
-        
         .top-left {
             top: 20px;
             left: 20px;
@@ -160,68 +120,7 @@
             right: 20px;
         }
         
-        .external-page {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-        }
-        
-        .external-wrapper {
-            position: relative;
-            width: 90%;
-            height: 90%;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .external-title {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: #2c3e50;
-            font-size: 28px;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .close-external {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(44, 62, 80, 0.8);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 101;
-        }
-        
-        .close-external:hover {
-            transform: scale(1.1);
-            background-color: #2c3e50;
-        }
-        
+        /* 传记页面样式 */
         .bio-page {
             position: fixed;
             top: 0;
@@ -288,30 +187,111 @@
             background-color: rgba(255, 215, 0, 0.9);
         }
         
-        h1, h2 {
-            color: #2c3e50;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        /* 聊天界面样式 */
+        .chat-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 900px;
+            height: 75%;
+            background-color: rgba(255, 253, 245, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #D7CCC8;
+            z-index: 100;
         }
         
-        h1 {
+        .chat-header {
+            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
+            color: white;
+            padding: 18px 25px;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #4E342E;
         }
         
-        h2 {
-            margin-top: 0;
-            font-size: 24px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #FFF8E1;
+            background-image: 
+                linear-gradient(rgba(215, 204, 200, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(215, 204, 200, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 20% 30%, rgba(141, 110, 99, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(93, 64, 55, 0.05) 0%, transparent 20%);
+            background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
         }
         
-        p {
+        .message {
+            max-width: 80%;
+            padding: 15px 20px;
+            border-radius: 20px;
             line-height: 1.6;
+            position: relative;
+            word-wrap: break-word;
             font-size: 18px;
-            text-align: justify;
-            color: #34495e;
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #A1887F 0%, #8D6E63 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .ai-message {
+            align-self: flex-start;
+            background: linear-gradient(135deg, #EFEBE9 0%, #D7CCC8 100%);
+            color: #3E2723;
+            border-bottom-left-radius: 5px;
+            border-left: 3px solid #5D4037;
+        }
+        
+        .chat-input-container {
+            display: flex;
+            padding: 15px;
+            background-color: #EFEBE9;
+            border-top: 1px solid #D7CCC8;
+        }
+        
+        #messageInput {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #BCAAA4;
+            border-radius: 30px;
+            font-family: 'Cambria', serif;
+            font-size: 17px;
+            outline: none;
+            background-color: white;
+            transition: all 0.3s;
+        }
+        
+        #sendButton {
+            margin-left: 12px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
         }
         
         .back-button {
@@ -320,20 +300,61 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: rgba(44, 62, 80, 0.8);
+            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
+            color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 101;
         }
         
-        .back-button:hover {
-            transform: scale(1.1);
-            background-color: #2c3e50;
+        .persona-badge {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: #5D4037;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* 粒子效果 */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -360,16 +381,7 @@
         <i class="fas fa-comment-dots"></i>
     </div>
     
-    <div class="external-page" id="externalPage">
-        <div class="external-wrapper">
-            <div class="external-title">The Eternal East Wind</div>
-            <iframe id="externalFrame" src="" frameborder="0"></iframe>
-            <button class="close-external" id="closeExternal">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div>
-    
+    <!-- 传记页面 -->
     <div class="bio-page" id="bioPage">
         <button class="back-button" id="backFromBio">
             <i class="fas fa-arrow-left"></i>
@@ -410,13 +422,33 @@
                 </div>
                 <h2>Honors and Legacy</h2>
                 <p>Qian Xuesen received numerous honors and awards throughout his life. He was hailed as the father of China's missile program, the king of rockets, and the father of Chinese aviation. He was awarded titles such as National Scientist of Outstanding Contribution, First-Class Hero Model Medal, and the "Two Bombs, One Satellite" Medal. His achievements and contributions have left an indelible mark on China's scientific history and continue to inspire countless young students to devote themselves to scientific endeavors and contribute to the prosperity and strength of their homeland.</p>
-                <p>In summary, Qian Xuesen was an outstanding scientist and patriot. His life was characterized by the pursuit of scientific truth and love for his country. His deeds and contributions will forever be engraved in China's scientific history, inspiring future generations to march forward continuously.</p>
             </div>
         </div>
     </div>
     
+    <!-- 聊天界面 -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Dialogue with Dr. Qian Xuesen
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="ai-message">
+                <div class="persona-badge">Qian Xuesen</div>
+                Greetings! I am Qian Xuesen, a scientist dedicated to my country's aerospace development. 
+                You may ask me about rocketry, my experiences in America, or my thoughts on scientific progress. 
+                How may I assist you today?
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="messageInput" placeholder="Ask Dr. Qian about science, patriotism, or his life..." autocomplete="off">
+            <button id="sendButton">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <script>
-        // Create floating particles
+        // 创建浮动粒子
         const particlesContainer = document.getElementById('particles');
         const particleCount = 50;
         
@@ -424,38 +456,32 @@
             const particle = document.createElement('div');
             particle.classList.add('particle');
             
-            // Random position
+            // 随机位置
             particle.style.left = `${Math.random() * 100}%`;
             particle.style.top = `${Math.random() * 100}%`;
             
-            // Random animation duration and delay
+            // 随机动画时长和延迟
             particle.style.animationDuration = `${10 + Math.random() * 10}s`;
             particle.style.animationDelay = `${Math.random() * 5}s`;
             
             particlesContainer.appendChild(particle);
         }
         
-        // Video button functionality - now opens external page
+        // 页面交互功能
         const videoButton = document.getElementById('videoButton');
-        const externalPage = document.getElementById('externalPage');
-        const externalFrame = document.getElementById('externalFrame');
-        const closeExternal = document.getElementById('closeExternal');
-        
-        videoButton.addEventListener('click', () => {
-            externalPage.style.display = 'flex';
-            externalFrame.src = 'https://www.bilibili.com/video/BV1yb4y1J7Cu/?vd_source=9f2e7f7c520e5461bf6db8ad014f9c0e';
-        });
-        
-        closeExternal.addEventListener('click', () => {
-            externalPage.style.display = 'none';
-            externalFrame.src = '';
-        });
-        
-        // Bio button functionality
         const bioButton = document.getElementById('bioButton');
+        const backButton = document.getElementById('backButton');
+        const chatButton = document.getElementById('chatButton');
         const bioPage = document.getElementById('bioPage');
+        const chatContainer = document.getElementById('chatContainer');
         const backFromBio = document.getElementById('backFromBio');
         
+        // 视频按钮 - 打开外部页面
+        videoButton.addEventListener('click', () => {
+            window.open('https://news.ustc.edu.cn/info/1014/78067.htm', '_blank');
+        });
+        
+        // 传记按钮
         bioButton.addEventListener('click', () => {
             bioPage.style.display = 'flex';
         });
@@ -464,21 +490,99 @@
             bioPage.style.display = 'none';
         });
         
-        // Back button functionality
-        const backButton = document.getElementById('backButton');
-        
-        backButton.addEventListener('click', () => {
-            window.location.href = 'https://lovermissing.github.io/West/';
+        // 聊天按钮
+        chatButton.addEventListener('click', () => {
+            chatContainer.style.display = 'flex';
         });
         
-        // Chat button functionality (to be implemented later)
-        const chatButton = document.getElementById('chatButton');
+        // 返回按钮
+        backButton.addEventListener('click', () => {
+            window.history.back();
+        });
         
-        chatButton.addEventListener('click', () => {
-            // This will be implemented when you design the chat page
-            alert('Chat page will be implemented later');
+        // 钱学森AI对话功能
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        
+        function addMessage(content, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
+            
+            if (!isUser) {
+                const badge = document.createElement('div');
+                badge.classList.add('persona-badge');
+                badge.textContent = 'Qian Xuesen';
+                messageDiv.appendChild(badge);
+            }
+            
+            const contentNode = document.createElement('div');
+            contentNode.textContent = content;
+            messageDiv.appendChild(contentNode);
+            
+            const timestamp = document.createElement('div');
+            timestamp.classList.add('timestamp');
+            timestamp.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            messageDiv.appendChild(timestamp);
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        async function getQianResponse(message) {
+            // 模拟AI响应 - 实际项目中替换为API调用
+            const qianKnowledge = [
+                "As I developed the DF-5 missile, we faced the challenge of... This experience taught me that scientific progress requires both patience and determination.",
+                "During my time at Caltech, Professor von Kármán often emphasized that... This principle became foundational to my later work in China.",
+                "When establishing China's space program, we had to... But as I always told my team: where there's a will, there's a way.",
+                "The key to rocket science lies in... This principle guided our work on both the Dongfeng and Long March series.",
+                "Patriotism is not contrary to scientific progress. My decision to return to China was based on...",
+                "Young scientists often ask about the most important quality for research. I always emphasize...",
+                "In 1955, when I finally returned to China after years of struggle, I realized that..."
+            ];
+            
+            // 模拟API延迟
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 800));
+            
+            // 构造钱学森风格的响应
+            const randomIndex = Math.floor(Math.random() * qianKnowledge.length);
+            return qianKnowledge[randomIndex];
+        }
+        
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, true);
+            messageInput.value = '';
+            
+            // 显示"正在输入"指示器
+            const typingIndicator = document.createElement('div');
+            typingIndicator.textContent = 'Dr. Qian is thinking...';
+            typingIndicator.classList.add('typing-indicator');
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            try {
+                const response = await getQianResponse(message);
+                // 移除"正在输入"指示器
+                chatMessages.removeChild(typingIndicator);
+                addMessage(response, false);
+            } catch (error) {
+                chatMessages.removeChild(typingIndicator);
+                addMessage("My apologies, I seem to be having difficulty recalling that information at the moment.", false);
+                console.error('Error:', error);
+            }
+        }
+        
+        // 发送消息事件监听
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
         });
     </script>
 </body>
 </html>
-
