@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USTC West Campus Exploration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambria&display=swap');
+        
+        body {
+            font-family: 'Cambria', serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('images/west part.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), -2px -2px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .explore-button {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .explore-button:hover {
+            transform: scale(1.2);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .button-icon {
+            width: 80%;
+            height: 80%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, 50px);
+            }
+            50% {
+                transform: translate(100px, 0);
+            }
+            75% {
+                transform: translate(50px, -50px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .button-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            white-space: nowrap;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Specific button positions */
+        #lake-button {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #statue-button {
+            bottom: 15%;
+            right: 15%;
+        }
+
+        #dome-button {
+            top: 15%;
+            right: 15%;
+        }
+
+        #return-button {
+            bottom: 15%;
+            left: 15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">USTC West Campus Exploration</h1>
+        
+        <!-- YeXi Lake Button (Center) -->
+        <div id="lake-button" class="explore-button" onclick="window.location.href='https://www.bilibili.com/'">
+            <svg class="button-icon" viewBox="0 0 100 100">
+                <!-- Enhanced lake icon with gradient and waves -->
+                <defs>
+                    <linearGradient id="lakeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#4a8fe7" />
+                        <stop offset="100%" stop-color="#3a7bd5" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#lakeGradient)"/>
+                <path fill="#5a9ff7" d="M20,50c0-16.6,13.4-30,30-30s30,13.4,30,30H20z"/>
+                <path fill="#4a8fe7" d="M25,50c0-13.8,11.2-25,25-25s25,11.2,25,25H25z"/>
+                <path fill="#6ab0ff" d="M30,50c0-11,9-20,20-20s20,9,20,20H30z"/>
+                <path fill="#7ac1ff" d="M35,50c0-8.3,6.7-15,15-15s15,6.7,15,15H35z"/>
+                <circle cx="50" cy="50" r="30" fill="none" stroke="#8ad2ff" stroke-width="2"/>
+            </svg>
+            <div class="button-label">YeXi Lake</div>
+        </div>
+        
+        <!-- Qian Xuesen Statue Button (Bottom Right) -->
+        <div id="statue-button" class="explore-button" onclick="window.location.href='https://www.bilibili.com/'">
+            <svg class="button-icon" viewBox="0 0 100 100">
+                <!-- Enhanced rocket icon with gradient and flames -->
+                <defs>
+                    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ff6b6b" />
+                        <stop offset="100%" stop-color="#ff8e8e" />
+                    </linearGradient>
+                    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffcc00" />
+                        <stop offset="100%" stop-color="#ff6600" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#rocketGradient)" d="M50,10l-20,20h10v30h20V30h10L50,10z"/>
+                <path fill="url(#flameGradient)" d="M30,70l10-10l10,10l10-10l10,10v10H30V70z"/>
+                <circle fill="#ffffff" cx="50" cy="25" r="5"/>
+                <path fill="#ffffff" d="M45,15l5,5l5-5l-5-5L45,15z"/>
+                <circle fill="#ffcc00" cx="50" cy="25" r="2"/>
+            </svg>
+            <div class="button-label">Qian Xuesen Statue</div>
+        </div>
+        
+        <!-- Air Dome Button (Top Right) -->
+        <div id="dome-button" class="explore-button" onclick="window.location.href='https://www.bilibili.com/'">
+            <svg class="button-icon" viewBox="0 0 100 100">
+                <!-- Enhanced badminton icon with side view -->
+                <defs>
+                    <linearGradient id="domeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#66bb6a" />
+                        <stop offset="100%" stop-color="#81c784" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#domeGradient)"/>
+                <!-- Shuttlecock side view -->
+                <path fill="#ffffff" d="M50,30l-5,40l5,5l5-5L50,30z"/>
+                <path fill="#f8f8f8" d="M50,30l-5,40l10,0L50,30z"/>
+                <path fill="#e0e0e0" d="M50,30l5,40l-10,0L50,30z"/>
+                <!-- Feathers -->
+                <path fill="#ffffff" d="M45,35l-10,5l5,5l5-5L45,35z"/>
+                <path fill="#ffffff" d="M55,35l10,5l-5,5l-5-5L55,35z"/>
+                <path fill="#f8f8f8" d="M45,45l-5,10l5,5l5-5L45,45z"/>
+                <path fill="#f8f8f8" d="M55,45l5,10l-5,5l-5-5L55,45z"/>
+                <!-- Net -->
+                <path fill="none" stroke="#ffffff" stroke-width="2" d="M30,50h40"/>
+                <path fill="none" stroke="#ffffff" stroke-width="2" d="M50,30v40"/>
+            </svg>
+            <div class="button-label">Air Dome</div>
+        </div>
+        
+        <!-- Return Button (Bottom Left) -->
+        <div id="return-button" class="explore-button" onclick="window.location.href='https://jovial-naiad-a3ecb6.netlify.app'">
+            <svg class="button-icon" viewBox="0 0 100 100">
+                <!-- Original map icon -->
+                <defs>
+                    <linearGradient id="mapGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#9575cd" />
+                        <stop offset="100%" stop-color="#b39ddb" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" fill="url(#mapGradient)"/>
+                <path fill="none" stroke="#ffffff" stroke-width="5" d="M30,30l15,15l-15,15"/>
+                <path fill="none" stroke="#ffffff" stroke-width="5" d="M70,30l-15,15l15,15"/>
+                <path fill="none" stroke="#ffffff" stroke-width="5" d="M50,20v60"/>
+                <!-- Return arrow -->
+                <path fill="#ffffff" d="M60,25l-20,20l20,20l5-5l-15-15l15-15L60,25z"/>
+            </svg>
+            <div class="button-label">Return</div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating white dots
+        function createDots() {
+            const container = document.querySelector('.container');
+            const dotCount = 20;
+            
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                
+                // Random position
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                
+                // Random animation duration and delay
+                dot.style.animationDuration = 5 + Math.random() * 20 + 's';
+                dot.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(dot);
+            }
+        }
+        
+        window.onload = function() {
+            createDots();
+        };
+    </script>
+</body>
+</html>
