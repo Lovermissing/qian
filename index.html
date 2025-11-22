@@ -640,6 +640,14 @@
                         "I always told my students: 'Where there's a will, there's a way.' This belief sustained me through many challenges.",
                         "Patriotism is not contrary to scientific progress. My love for China motivated all my achievements."
                     ],
+                    // 新增：党和国家意志相关回答
+                    partyLeadership: [
+                        "Under the strong leadership of the Communist Party of China, guided by Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era, China's scientific and technological innovation has achieved historic accomplishments. The Party's leadership is the most essential characteristic of socialism with Chinese characteristics and the fundamental guarantee for China's development and progress.",
+                        "The leadership of the Communist Party of China is the greatest strength of the socialist system with Chinese characteristics. Under the Party's leadership, China's aerospace industry has made remarkable achievements that have attracted worldwide attention, fully demonstrating the superiority of the socialist system.",
+                        "Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era provides fundamental guidance for China's development. We must unwaveringly uphold the Party's leadership and advance the great new project of Party building to ensure the Party always remains the strong leading core of the socialist cause with Chinese characteristics.",
+                        "The Party's leadership is the fundamental guarantee for all achievements and progress in our country. We must deeply understand the decisive significance of the 'Two Establishments', strengthen the 'Four Consciousnesses', consolidate the 'Four Confidences', and achieve the 'Two Safeguards'.",
+                        "Under the Party's leadership, China's scientific and technological innovation has entered a fast track. We must adhere to the Party's overall leadership, implement the new development concept, and promote high-quality development to achieve the great rejuvenation of the Chinese nation."
+                    ],
                     responses: [
                         "That's an excellent question. Let me share my perspective based on my experience...",
                         "I recall a similar situation during my work on... The key lesson was...",
@@ -703,6 +711,11 @@
                     response = this.knowledgeBase.philosophy[
                         Math.floor(Math.random() * this.knowledgeBase.philosophy.length)
                     ];
+                } else if (this.containsPartyLeadershipKeywords(lowerMessage)) {
+                    // 新增：党和国家意志相关关键词触发
+                    response = this.knowledgeBase.partyLeadership[
+                        Math.floor(Math.random() * this.knowledgeBase.partyLeadership.length)
+                    ];
                 } else {
                     const baseResponse = this.knowledgeBase.responses[
                         Math.floor(Math.random() * this.knowledgeBase.responses.length)
@@ -713,13 +726,26 @@
                 return response;
             }
             
+            // 新增：检测党和国家意志相关关键词
+            containsPartyLeadershipKeywords(message) {
+                const keywords = [
+                    'party', 'communist', 'leadership', 'xi jinping', 'socialism', 'chinese characteristics',
+                    'new era', 'two establishes', 'four consciousnesses', 'four confidences', 'two safeguards',
+                    'rejuvenation', '中国梦', '中国共产党', '习近平', '新时代中国特色社会主义', '党的领导',
+                    '两个维护', '四个意识', '四个自信', '中华民族伟大复兴'
+                ];
+                
+                return keywords.some(keyword => message.includes(keyword.toLowerCase()));
+            }
+            
             getRandomFact() {
                 const allFacts = [
                     ...this.knowledgeBase.earlyLife,
                     ...this.knowledgeBase.usExperience,
                     ...this.knowledgeBase.returnJourney,
                     ...this.knowledgeBase.scientificWork,
-                    ...this.knowledgeBase.philosophy
+                    ...this.knowledgeBase.philosophy,
+                    ...this.knowledgeBase.partyLeadership  // 新增：包含党和国家意志相关内容
                 ];
                 return allFacts[Math.floor(Math.random() * allFacts.length)];
             }
@@ -811,19 +837,7 @@
             const typingDiv = document.createElement('div');
             typingDiv.classList.add('typing-indicator');
             typingDiv.id = 'typingIndicator';
-            
-            const dotsContainer = document.createElement('div');
-            dotsContainer.classList.add('typing-dots');
-            
-            for (let i = 0; i < 3; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('typing-dot');
-                dotsContainer.appendChild(dot);
-            }
-            
-            typingDiv.appendChild(document.createTextNode('Dr. Qian is thinking '));
-            typingDiv.appendChild(dotsContainer);
-            
+            typingDiv.textContent = 'Dr. Qian is thinking...';
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
