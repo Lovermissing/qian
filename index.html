@@ -861,15 +861,16 @@
                 const hasPhilosophicalContent = this.containsPhilosophicalKeywords(lowerMessage);
                 const messageDepth = this.analyzeMessageDepth(message);
                 
-                // 响应优先级：党和国家 > 哲学深度 > 提示词关键词 > 默认哲理性
+               // 修改后的响应优先级：党和国家 > 提示词关键词 > 哲学深度 > 默认哲理性
                 if (hasPartyKeywords) {
                     return this.knowledgeBase.partyLeadership[
                         Math.floor(Math.random() * this.knowledgeBase.partyLeadership.length)
                     ];
+                } else if (containsPromptKeywords) {
+                    // 包含提示词关键词，使用对应的技术性回答
+                    return this.getTechnicalResponse(message);
                 } else if (messageDepth > 0.7 || hasPhilosophicalContent) {
                     return this.generatePhilosophicalResponse(message);
-                } else if (containsPromptKeywords) {
-                    return this.getTechnicalResponse(message);
                 } else {
                     // 不包含任何特定关键词，统一使用哲理性回答
                     return this.generatePhilosophicalResponse(message);
@@ -1130,3 +1131,4 @@
     </script>
 </body>
 </html>
+
