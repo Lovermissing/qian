@@ -1,5 +1,5 @@
 {
-  "name": "ai-chat-app",
+  "name": "chat",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,4 +12,5 @@
   "dependencies": {
     "openai": "^4.28.0"
   }
+
 }
