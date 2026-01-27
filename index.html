@@ -35,7 +35,7 @@
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
@@ -60,69 +60,63 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 2;
-            backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .main-button i {
-            font-size: 45px;
-            color: #2c3e50;
+            font-size: 40px;
+            color: #333;
             transition: all 0.3s ease;
         }
         
         .main-button:hover {
-            transform: scale(1.15) rotate(5deg);
+            transform: scale(1.1);
             background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
         
         /* 角落按钮样式 */
         .corner-button {
             position: absolute;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 2;
-            backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, 0.15);
         }
         
         .corner-button i {
-            font-size: 32px;
-            color: #2c3e50;
+            font-size: 30px;
+            color: #333;
             transition: all 0.3s ease;
         }
         
         .corner-button:hover {
-            transform: scale(1.15);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
         }
         
         /* 按钮位置 */
         .top-left {
-            top: 25px;
-            left: 25px;
+            top: 20px;
+            left: 20px;
         }
         
         .bottom-left {
-            bottom: 25px;
-            left: 25px;
+            bottom: 20px;
+            left: 20px;
         }
         
         .bottom-right {
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
         }
         
         /* 传记页面样式 */
@@ -143,266 +137,106 @@
         }
         
         .bio-content {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.98));
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
             margin: 0 auto;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .bio-section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
-            padding: 20px 0 20px 100px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-left: 60px;
         }
         
         .bio-icon {
             position: absolute;
             left: 0;
-            top: 20px;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
         
         .bio-icon:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1);
         }
         
+        /* 图标颜色 */
         .icon-1 {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background-color: rgba(100, 149, 237, 0.9);
         }
         
         .icon-2 {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            background-color: rgba(144, 238, 144, 0.9);
         }
         
         .icon-3 {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background-color: rgba(255, 182, 193, 0.9);
         }
         
         .icon-4 {
-            background: linear-gradient(135deg, #f39c12, #d35400);
+            background-color: rgba(255, 215, 0, 0.9);
         }
         
+        /* 标题样式 */
         h1, h2 {
             color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
         
         h1 {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.8rem;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            font-size: 36px;
         }
         
         h2 {
             margin-top: 0;
-            font-size: 1.8rem;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #3498db;
+            font-size: 24px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
         }
         
+        /* 段落样式 */
         p {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            text-align: justify;
-            color: #2c3e50;
-        }
-        
-        /* 聊天界面样式 */
-        .chat-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 1000px;
-            height: 80%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.98));
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-        
-        .chat-header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-bottom: 3px solid #3498db;
-        }
-        
-        .chat-messages {
-            flex: 1;
-            padding: 25px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-        
-        .message {
-            max-width: 75%;
-            padding: 18px 25px;
-            border-radius: 20px;
             line-height: 1.6;
-            position: relative;
-            word-wrap: break-word;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            animation: messageAppear 0.3s ease-out;
+            font-size: 18px;
+            text-align: justify;
+            color: #34495e;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
         }
         
-        @keyframes messageAppear {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .user-message {
-            align-self: flex-end;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            border-bottom-right-radius: 5px;
-        }
-        
-        .ai-message {
-            align-self: flex-start;
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            color: #2c3e50;
-            border-bottom-left-radius: 5px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .chat-input-container {
-            display: flex;
-            padding: 20px;
-            background: linear-gradient(135deg, #e9ecef, #dee2e6);
-            border-top: 1px solid #ced4da;
-        }
-        
-        #messageInput {
-            flex: 1;
-            padding: 18px 25px;
-            border: 2px solid #ced4da;
-            border-radius: 50px;
-            font-family: 'Cambria', serif;
-            font-size: 1.1rem;
-            outline: none;
-            background: white;
-            transition: all 0.3s;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        #messageInput:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
-        }
-        
-        #sendButton {
-            margin-left: 15px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        #sendButton:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        
+        /* 返回按钮样式 */
         .back-button {
             position: fixed;
-            top: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 101;
-            font-size: 1.3rem;
         }
         
         .back-button:hover {
             transform: scale(1.1);
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-        }
-        
-        .typing-indicator {
-            display: none;
-            align-self: flex-start;
-            background: linear-gradient(135deg, #e9ecef, #dee2e6);
-            color: #2c3e50;
-            padding: 15px 25px;
-            border-radius: 25px;
-            font-style: italic;
-            margin-bottom: 15px;
-            border-left: 4px solid #3498db;
-            animation: pulse 1.5s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        
-        .persona-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: #3498db;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .timestamp {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-top: 8px;
-            text-align: right;
+            background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
         }
         
         /* 粒子效果 */
@@ -417,11 +251,11 @@
         
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
-            animation: float 20s infinite linear;
+            animation: float 15s infinite linear;
         }
         
         @keyframes float {
@@ -445,7 +279,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background-color: rgba(0, 0, 0, 0.9);
             display: none;
             flex-direction: column;
             justify-content: center;
@@ -455,24 +289,23 @@
         
         .video-container {
             width: 90%;
-            max-width: 1100px;
-            height: 70%;
-            background: white;
-            border-radius: 15px;
+            max-width: 1000px;
+            height: 80%;
+            background-color: white;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
         
         .video-title {
             position: absolute;
-            top: -50px;
+            top: -40px;
             left: 0;
             width: 100%;
             text-align: center;
             color: white;
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            text-shadow: 0 0 5px white, 0 0 10px white;
         }
         
         iframe {
@@ -483,101 +316,24 @@
         
         .video-back-button {
             position: absolute;
-            top: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            z-index: 101;
-            font-size: 1.3rem;
-        }
-        
-        .video-back-button:hover {
-            transform: scale(1.1);
-            background: white;
-        }
-        
-        /* 聊天返回按钮样式 */
-        .chat-back-button {
-            position: absolute;
             top: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 101;
-            border: none;
-            font-size: 1.2rem;
         }
         
-        .chat-back-button:hover {
+        .video-back-button:hover {
             transform: scale(1.1);
-            background: white;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-                top: 10%;
-            }
-            
-            .main-button {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .main-button i {
-                font-size: 35px;
-            }
-            
-            .corner-button {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .corner-button i {
-                font-size: 28px;
-            }
-            
-            .chat-container {
-                width: 95%;
-                height: 85%;
-            }
-            
-            .message {
-                max-width: 90%;
-                font-size: 1rem;
-            }
-            
-            .bio-content {
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            .bio-section {
-                padding-left: 0;
-                padding-top: 90px;
-            }
-            
-            .bio-icon {
-                top: 10px;
-                left: 10px;
-            }
+            background-color: white;
         }
     </style>
 </head>
@@ -598,10 +354,6 @@
     
     <div class="corner-button bottom-left" id="backButton">
         <i class="fas fa-arrow-left"></i>
-    </div>
-    
-    <div class="corner-button bottom-right" id="chatButton">
-        <i class="fas fa-comment-dots"></i>
     </div>
     
     <!-- 传记页面 -->
@@ -649,33 +401,9 @@
         </div>
     </div>
     
-    <!-- 聊天界面 -->
-    <div class="chat-container" id="chatContainer">
-        <button class="back-button" id="chatBackButton">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="chat-header">
-            Dialogue with Dr. Qian Xuesen
-        </div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="ai-message">
-                <div class="persona-badge">Qian Xuesen</div>
-                Greetings! I am Qian Xuesen, a scientist dedicated to my country's aerospace development. 
-                You may ask me about science, patriotism, or my life experiences. 
-                How may I assist you today?
-            </div>
-        </div>
-        <div class="chat-input-container">
-            <input type="text" id="messageInput" placeholder="Ask Dr. Qian about science, patriotism, or his life..." autocomplete="off">
-            <button id="sendButton">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
-    
     <!-- 视频页面 -->
     <div class="video-page" id="videoPage">
-        <button class="video-back-button" id="videoBackButton">
+        <button class="back-button" id="videoBackButton">
             <i class="fas fa-arrow-left"></i>
         </button>
         <div class="video-container">
@@ -687,7 +415,7 @@
     <script>
         // 创建浮动粒子
         const particlesContainer = document.getElementById('particles');
-        const particleCount = 60;
+        const particleCount = 50;
         
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
@@ -698,326 +426,18 @@
             particle.style.top = `${Math.random() * 100}%`;
             
             // 随机动画时长和延迟
-            particle.style.animationDuration = `${15 + Math.random() * 15}s`;
-            particle.style.animationDelay = `${Math.random() * 10}s`;
+            particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
             
             particlesContainer.appendChild(particle);
         }
-        
-        // 钱学森AI核心功能 - 增强版
-        class QianAI {
-            constructor() {
-                this.history = [];
-                this.persona = {
-                    name: "Qian Xuesen",
-                    background: "Father of Chinese rocketry, returned from US in 1955",
-                    style: "Formal but passionate, mixes technical details with patriotic sentiments and philosophical insights"
-                };
-                this.knowledgeBase = {
-                    earlyLife: [
-                        "I was born on December 11, 1911 in Hangzhou, Zhejiang Province. My father Qian Jiazhen was a scholar who instilled in me a love for learning from an early age.",
-                        "At Beijing Normal University High School, I developed a particular interest in mathematics and physics. My teachers recognized my potential and encouraged me to pursue engineering.",
-                        "In 1929, I enrolled at Shanghai Jiao Tong University's School of Mechanical Engineering. The rigorous curriculum there laid the foundation for my future work in aeronautics."
-                    ],
-                    usExperience: [
-                        "At MIT, I studied under Professor Theodore von Kármán, a pioneer in aerodynamics. He became my mentor and lifelong friend.",
-                        "During my time at Caltech, I worked on the development of early rocket technology. Our team made significant breakthroughs in jet propulsion theory.",
-                        "I served as a consultant to the U.S. Army Air Forces during WWII, helping develop missile guidance systems. This experience proved invaluable for my later work in China."
-                    ],
-                    returnJourney: [
-                        "When I learned of the founding of the People's Republic of China in 1949, I immediately decided to return and contribute to my homeland's development.",
-                        "The U.S. government detained me for five years, falsely accusing me of communist sympathies. During this difficult time, I remained steadfast in my determination to serve China.",
-                        "Thanks to the efforts of Premier Zhou Enlai and the Chinese government, I finally returned to my motherland in 1955 aboard the SS President Cleveland."
-                    ],
-                    scientificWork: [
-                        "As director of the Fifth Research Institute, I established China's first missile and rocket research program with limited resources.",
-                        "The DF-5 intercontinental ballistic missile represented a major breakthrough in Chinese rocketry. Its development taught us valuable lessons about self-reliance.",
-                        "Our work on satellite technology culminated in the successful launch of Dongfanghong-1 in 1970, making China the fifth space-faring nation."
-                    ],
-                    philosophy: [
-                        "Scientific progress requires both theoretical knowledge and practical experimentation. This principle guided all my work.",
-                        "I always told my students: 'Where there's a will, there's a way.' This belief sustained me through many challenges.",
-                        "Patriotism is not contrary to scientific progress. My love for China motivated all my achievements."
-                    ],
-                    partyLeadership: [
-                        "Under the strong leadership of the Communist Party of China, guided by Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era, China's scientific and technological innovation has achieved historic accomplishments. The Party's leadership is the most essential characteristic of socialism with Chinese characteristics and the fundamental guarantee for China's development and progress.",
-                        "The leadership of the Communist Party of China is the greatest strength of the socialist system with Chinese characteristics. Under the Party's leadership, China's aerospace industry has made remarkable achievements that have attracted worldwide attention, fully demonstrating the superiority of the socialist system.",
-                        "Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era provides fundamental guidance for China's development. We must unwaveringly uphold the Party's leadership and advance the great new project of Party building to ensure the Party always remains the strong leading core of the socialist cause with Chinese characteristics.",
-                        "The Party's leadership is the fundamental guarantee for all achievements and progress in our country. We must deeply understand the decisive significance of the 'Two Establishments', strengthen the 'Four Consciousnesses', consolidate the 'Four Confidences', and achieve the 'Two Safeguards'.",
-                        "Under the Party's leadership, China's scientific and technological innovation has entered a fast track. We must adhere to the Party's overall leadership, implement the new development concept, and promote high-quality development to achieve the great rejuvenation of the Chinese nation."
-                    ],
-                    philosophicalWisdom: [
-                        "Science is not merely a collection of facts; it is a dialogue between human curiosity and the mysteries of the universe. Each equation we write, each experiment we conduct, is a verse in the great poem of existence.",
-                        "The rocket's ascent mirrors the human spirit's yearning for transcendence. We reach for the stars not because it is easy, but because it is in our nature to seek what lies beyond the horizon.",
-                        "Time flows like a river, carrying both the debris of past failures and the seeds of future triumphs. The wise scientist learns to read its currents.",
-                        "In the silent language of mathematics, I find echoes of cosmic harmony. The same principles that guide celestial bodies also shape human destiny.",
-                        "A nation's greatness is measured not by the wealth it accumulates, but by the dreams it dares to pursue and the knowledge it chooses to cherish.",
-                        "The laboratory is my temple, the scientific method my liturgy. In the meticulous recording of data, I find a form of meditation.",
-                        "Every failure in experimentation is but a stepping stone across the river of ignorance. The true scientist welcomes setbacks as opportunities for deeper understanding.",
-                        "The universe speaks in patterns - from the spiral of galaxies to the double helix of life. To do science is to learn this celestial language.",
-                        "Patriotism, when married to scientific pursuit, becomes a force that can move mountains and reach for the heavens. It is the compass that guides my life's work.",
-                        "The most beautiful equations are those that reveal the hidden connections between seemingly disparate phenomena - much like the threads of fate that connect us all.",
-                        "A life in science teaches one humility. The more we discover, the more we realize how much remains veiled in mystery.",
-                        "The pursuit of knowledge is a candle in the darkness. Each generation passes this flame to the next, illuminating the path forward.",
-                        "In the stillness of the laboratory, I often feel the presence of those great minds who came before me. Science is a conversation across centuries.",
-                        "The rocket's trajectory is a parable: it reminds us that to move forward, we must first be willing to leave the familiar behind.",
-                        "True innovation occurs at the intersection of disciplines, where physics dances with poetry and engineering embraces philosophy."
-                    ],
-                    literaryMetaphors: [
-                        "Science is the modern-day alchemy, transforming the lead of ignorance into the gold of understanding. Each experiment is a stanza in humanity's epic poem.",
-                        "The laboratory is my library, and nature is the most profound text ever written. My life's work has been learning to read its intricate calligraphy.",
-                        "Like a composer hearing symphonies in silence, the scientist sees equations in chaos. We are all translators of the universe's hidden music.",
-                        "A research breakthrough is like a sudden rain after drought - it nourishes not just the immediate problem, but the entire landscape of human knowledge.",
-                        "The scientific mind is both a microscope and a telescope - attending to minute details while never losing sight of the cosmic panorama.",
-                        "Each scientific discovery is a key that unlocks not just one door, but reveals the existence of whole new corridors in the mansion of knowledge.",
-                        "The relationship between theory and experiment is like that between roots and branches - one draws nourishment from the earth, the other reaches for the light.",
-                        "A well-designed experiment is a sonnet - every element in perfect proportion, each variable playing its part in a harmonious whole.",
-                        "The history of science is a tapestry woven with threads of intuition, persistence, and occasional divine inspiration.",
-                        "Like a gardener tending rare orchids, the scientist cultivates ideas, providing just the right conditions for truth to blossom.",
-                        "Mathematics is the skeleton key that opens doors to realms beyond ordinary perception. Its beauty lies in its ruthless honesty.",
-                        "The laboratory notebook is my journal of conversations with reality - each entry a dialogue between hypothesis and truth.",
-                        "Scientific progress moves like the tides - sometimes advancing rapidly, sometimes receding, but always governed by forces greater than any individual.",
-                        "A theory is like a ship that carries us across oceans of uncertainty. Even when we must abandon it for a better vessel, we honor its service.",
-                        "The scientist's mind should be like a clear lake - reflecting reality without distortion, yet deep enough to hold mysteries."
-                    ],
-                    lifeWisdom: [
-                        "The greatest discoveries often come when we have the courage to question what everyone takes for granted. Certainty is the enemy of progress.",
-                        "A life dedicated to science teaches that the most valuable possession is not what you know, but your capacity to learn what you don't know.",
-                        "Success in research, as in life, depends less on brilliant flashes of insight than on the patient accumulation of small truths.",
-                        "The mark of a true scientist is not never failing, but learning to fail forward - extracting wisdom from each setback.",
-                        "We stand on the shoulders of giants not to look down on others, but to see further than we could alone. Knowledge is a collective achievement.",
-                        "The most dangerous hypothesis is the one we never think to question. The unexamined assumption has thwarted more progress than any technical obstacle.",
-                        "Scientific integrity means following the evidence wherever it leads, even when it takes you places you never expected to go.",
-                        "A theory is like a map - it's not the territory itself, but it's useless if it doesn't correspond to reality. The wise scientist knows the difference.",
-                        "The most elegant solution is often the simplest one that accounts for all the facts. Nature prefers economy in all things.",
-                        "True understanding comes not from accumulating facts, but from discerning the patterns that connect them. Wisdom sees the forest and the trees.",
-                        "The scientific method is both a sword that cuts through superstition and a plow that prepares the soil for new growth.",
-                        "Every ending in research is a new beginning. Each answered question births a dozen new mysteries waiting to be explored.",
-                        "The measure of a civilization is not its technological prowess alone, but how it uses that power to elevate the human condition.",
-                        "Curiosity is the engine of progress, but discipline is the steering wheel. Without both, we go nowhere meaningful.",
-                        "The most important instrument in any laboratory is not made of glass or metal - it is the prepared mind of the researcher."
-                    ],
-                    promptResponses: [
-                        "Science, you ask? Let me share a perspective that has guided my life's work...",
-                        "Patriotism is the compass that has guided all my scientific endeavors. Let me explain...",
-                        "My life has been a journey of discovery. You inquire about science and patriotism - these are the twin pillars of my existence.",
-                        "The relationship between scientific pursuit and love for one's country is a profound topic. Based on my experience...",
-                        "You ask about my life's work. Science and patriotism are not separate paths, but intertwined threads in the tapestry of my career.",
-                        "The fusion of scientific rigor and patriotic dedication has been the driving force behind all my achievements. Let me elaborate...",
-                        "Your question touches on the very essence of my being. Science provides the tools, but patriotism provides the purpose.",
-                        "In my view, true scientific progress must be rooted in service to one's nation and people. This belief has shaped my entire career.",
-                        "The journey of a scientist is also a journey of the soul. Patriotism gives meaning to our technical accomplishments.",
-                        "You seek to understand the connection between scientific work and national service. This is the central theme of my life's story."
-                    ],
-                    promptKeywords: [
-                        'science', 'patriotism', 'life', 'work', 'research', 
-                        'rocket', 'missile', 'china', 'america', 'study',
-                        '科学', '爱国', '生活', '工作', '研究', '火箭', '导弹', '中国', '美国', '学习'
-                    ],
-                    responses: [
-                        "That's an excellent question. Let me share my perspective based on my experience...",
-                        "I recall a similar situation during my work on... The key lesson was...",
-                        "As I often explained to my colleagues, the solution lies in..."
-                    ]
-                };
-            }
-            
-            async respondTo(message) {
-                this.history.push({ role: 'user', content: message });
-                
-                const thinkingTime = this.calculateThinkingTime(message);
-                await new Promise(resolve => setTimeout(resolve, thinkingTime));
-                
-                let response;
-                if (message.toLowerCase().includes('hello') || 
-                    message.toLowerCase().includes('hi') ||
-                    message.toLowerCase().includes('greeting')) {
-                    response = this.getGreeting();
-                } else {
-                    response = this.getIntelligentResponse(message);
-                }
-                
-                this.history.push({ role: 'assistant', content: response });
-                return response;
-            }
-            
-            getGreeting() {
-                const greetings = [
-                    "Greetings! I am Qian Xuesen. How may I share my experiences with you today?",
-                    "Hello. As a scientist dedicated to my country's aerospace development, I'm pleased to converse with you.",
-                    "Welcome. I'm Qian Xuesen. You may ask me about rocketry, my time in America, or China's scientific progress."
-                ];
-                return greetings[Math.floor(Math.random() * greetings.length)];
-            }
-            
-            getIntelligentResponse(message) {
-                const lowerMessage = message.toLowerCase();
-                
-                // 1. 检查是否包含提示词关键词
-                const containsPromptKeywords = this.containsPromptKeywords(lowerMessage);
-                
-                // 2. 检查特定关键词
-                const hasPartyKeywords = this.containsPartyLeadershipKeywords(lowerMessage);
-                const hasPhilosophicalContent = this.containsPhilosophicalKeywords(lowerMessage);
-                const messageDepth = this.analyzeMessageDepth(message);
-                
-               // 修改后的响应优先级：党和国家 > 提示词关键词 > 哲学深度 > 默认哲理性
-                if (hasPartyKeywords) {
-                    return this.knowledgeBase.partyLeadership[
-                        Math.floor(Math.random() * this.knowledgeBase.partyLeadership.length)
-                    ];
-                } else if (containsPromptKeywords) {
-                    // 包含提示词关键词，使用对应的技术性回答
-                    return this.getTechnicalResponse(message);
-                } else if (messageDepth > 0.7 || hasPhilosophicalContent) {
-                    return this.generatePhilosophicalResponse(message);
-                } else {
-                    // 不包含任何特定关键词，统一使用哲理性回答
-                    return this.generatePhilosophicalResponse(message);
-                }
-            }
-            
-            containsPromptKeywords(message) {
-                return this.knowledgeBase.promptKeywords.some(keyword => 
-                    message.includes(keyword.toLowerCase())
-                );
-            }
-            
-            generatePhilosophicalResponse(message) {
-                const responseTypes = [
-                    ...this.knowledgeBase.philosophicalWisdom,
-                    ...this.knowledgeBase.literaryMetaphors, 
-                    ...this.knowledgeBase.lifeWisdom,
-                    ...this.knowledgeBase.promptResponses
-                ];
-                
-                const baseResponse = responseTypes[Math.floor(Math.random() * responseTypes.length)];
-                
-                if (this.shouldCombineResponses(message)) {
-                    const secondResponse = responseTypes[Math.floor(Math.random() * responseTypes.length)];
-                    return this.combineResponses(baseResponse, secondResponse);
-                }
-                
-                return baseResponse;
-            }
-            
-            shouldCombineResponses(message) {
-                const messageLength = message.split(' ').length;
-                return messageLength > 10 || this.analyzeMessageDepth(message) > 0.5;
-            }
-            
-            combineResponses(response1, response2) {
-                const connectors = [
-                    "Moreover, ",
-                    "In a similar vein, ",
-                    "This reminds me that ",
-                    "Building on this thought, ",
-                    "Furthermore, ",
-                    "I'm also reminded that ",
-                    "Additionally, ",
-                    "On a related note, "
-                ];
-                
-                const connector = connectors[Math.floor(Math.random() * connectors.length)];
-                return `${response1} ${connector}${response2.toLowerCase()}`;
-            }
-            
-            getTechnicalResponse(message) {
-                const lowerMessage = message.toLowerCase();
-                let response;
-                
-                if (lowerMessage.includes('born') || lowerMessage.includes('childhood') || lowerMessage.includes('early')) {
-                    response = this.knowledgeBase.earlyLife[
-                        Math.floor(Math.random() * this.knowledgeBase.earlyLife.length)
-                    ];
-                } else if (lowerMessage.includes('america') || lowerMessage.includes('us') || lowerMessage.includes('mit') || lowerMessage.includes('caltech') || lowerMessage.includes('study abroad')) {
-                    response = this.knowledgeBase.usExperience[
-                        Math.floor(Math.random() * this.knowledgeBase.usExperience.length)
-                    ];
-                } else if (lowerMessage.includes('return') || lowerMessage.includes('china') || lowerMessage.includes('detain') || lowerMessage.includes('home')) {
-                    response = this.knowledgeBase.returnJourney[
-                        Math.floor(Math.random() * this.knowledgeBase.returnJourney.length)
-                    ];
-                } else if (lowerMessage.includes('work') || lowerMessage.includes('research') || lowerMessage.includes('missile') || lowerMessage.includes('rocket') || lowerMessage.includes('science')) {
-                    response = this.knowledgeBase.scientificWork[
-                        Math.floor(Math.random() * this.knowledgeBase.scientificWork.length)
-                    ];
-                } else if (lowerMessage.includes('patriotism') || lowerMessage.includes('country') || lowerMessage.includes('nation') || lowerMessage.includes('爱国')) {
-                    response = this.knowledgeBase.philosophy[
-                        Math.floor(Math.random() * this.knowledgeBase.philosophy.length)
-                    ];
-                } else {
-                    response = this.knowledgeBase.promptResponses[
-                        Math.floor(Math.random() * this.knowledgeBase.promptResponses.length)
-                    ];
-                }
-                
-                return response;
-            }
-            
-            containsPartyLeadershipKeywords(message) {
-                const keywords = [
-                    'party', 'communist', 'leadership', 'xi jinping', 'socialism', 'chinese characteristics',
-                    'new era', 'two establishes', 'four consciousnesses', 'four confidences', 'two safeguards',
-                    'rejuvenation', '中国梦', '中国共产党', '习近平', '新时代中国特色社会主义', '党的领导',
-                    '两个维护', '四个意识', '四个自信', '中华民族伟大复兴'
-                ];
-                
-                return keywords.some(keyword => message.includes(keyword.toLowerCase()));
-            }
-            
-            containsPhilosophicalKeywords(message) {
-                const philosophicalWords = [
-                    'philosophy', 'wisdom', 'meaning', 'purpose', 'life', 'existence',
-                    'truth', 'beauty', 'art', 'poetry', 'literature', 'human nature',
-                    'soul', 'spirit', 'destiny', 'fate', 'universe', 'cosmos',
-                    'time', 'space', 'reality', 'perception', 'consciousness',
-                    '为什么', '意义', '人生', '哲学', '智慧', '宇宙', '时间',
-                    '真理', '美', '艺术', '诗歌', '文学', '人类', '灵魂'
-                ];
-                
-                return philosophicalWords.some(word => message.includes(word));
-            }
-            
-            analyzeMessageDepth(message) {
-                const deepWords = ['why', 'how', 'meaning', 'purpose', 'think', 'believe', 'feel'];
-                const wordCount = message.split(' ').length;
-                const hasQuestionMark = message.includes('?');
-                const hasDeepWord = deepWords.some(word => message.toLowerCase().includes(word));
-                
-                let depthScore = 0;
-                if (wordCount > 8) depthScore += 0.3;
-                if (hasQuestionMark) depthScore += 0.3;
-                if (hasDeepWord) depthScore += 0.4;
-                
-                return Math.min(depthScore, 1);
-            }
-            
-            calculateThinkingTime(message) {
-                const baseTime = 800;
-                const wordCount = message.split(' ').length;
-                const depthBonus = this.analyzeMessageDepth(message) * 1000;
-                const complexityBonus = Math.min(wordCount * 50, 1000);
-                
-                return baseTime + depthBonus + complexityBonus + Math.random() * 800;
-            }
-        }
-
-        // 初始化AI实例
-        const qianAI = new QianAI();
         
         // 页面交互功能
         const videoButton = document.getElementById('videoButton');
         const bioButton = document.getElementById('bioButton');
         const backButton = document.getElementById('backButton');
-        const chatButton = document.getElementById('chatButton');
-        const chatContainer = document.getElementById('chatContainer');
         const bioPage = document.getElementById('bioPage');
         const backFromBio = document.getElementById('backFromBio');
-        const chatMessages = document.getElementById('chatMessages');
-        const messageInput = document.getElementById('messageInput');
-        const sendButton = document.getElementById('sendButton');
-        const chatBackButton = document.getElementById('chatBackButton');
         const videoPage = document.getElementById('videoPage');
         const videoFrame = document.getElementById('videoFrame');
         const videoBackButton = document.getElementById('videoBackButton');
@@ -1044,91 +464,10 @@
             bioPage.style.display = 'none';
         });
         
-        // 聊天按钮功能
-        chatButton.addEventListener('click', function() {
-            chatContainer.style.display = 'flex';
-        });
-        
-        // 聊天返回按钮功能
-        chatBackButton.addEventListener('click', function() {
-            chatContainer.style.display = 'none';
-        });
-        
         // 左下角返回按钮功能 - 跳转到指定网址
         backButton.addEventListener('click', function() {
             window.location.href = 'https://lovermissing.github.io/West/';
         });
-        
-        // 聊天界面功能
-        function addMessage(content, isUser) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
-            
-            if (!isUser) {
-                const badge = document.createElement('div');
-                badge.classList.add('persona-badge');
-                badge.textContent = qianAI.persona.name;
-                messageDiv.appendChild(badge);
-            }
-            
-            const contentNode = document.createElement('div');
-            contentNode.textContent = content;
-            messageDiv.appendChild(contentNode);
-            
-            const timestamp = document.createElement('div');
-            timestamp.classList.add('timestamp');
-            timestamp.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            messageDiv.appendChild(timestamp);
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        
-        function showTyping() {
-            const typingDiv = document.createElement('div');
-            typingDiv.classList.add('typing-indicator');
-            typingDiv.id = 'typingIndicator';
-            typingDiv.textContent = 'Dr. Qian is thinking...';
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        
-        function hideTyping() {
-            const typingIndicator = document.getElementById('typingIndicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
-        }
-        
-        async function sendMessage() {
-            const message = messageInput.value.trim();
-            if (!message) return;
-            
-            addMessage(message, true);
-            messageInput.value = '';
-            
-            showTyping();
-            
-            try {
-                const response = await qianAI.respondTo(message);
-                addMessage(response, false);
-            } catch (error) {
-                addMessage("My apologies, I seem to be having technical difficulties.", false);
-                console.error(error);
-            } finally {
-                hideTyping();
-            }
-        }
-        
-        // 事件监听
-        sendButton.addEventListener('click', sendMessage);
-        messageInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
     </script>
 </body>
 </html>
-
