@@ -335,6 +335,34 @@
             transform: scale(1.1);
             background-color: white;
         }
+        
+        /* 新增：跳转按钮样式 */
+        .jump-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 101;
+        }
+        
+        .jump-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        }
+        
+        .jump-button i {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -403,8 +431,12 @@
     
     <!-- 视频页面 -->
     <div class="video-page" id="videoPage">
-        <button class="back-button" id="videoBackButton">
+        <button class="video-back-button" id="videoBackButton">
             <i class="fas fa-arrow-left"></i>
+        </button>
+        <!-- 新增：跳转按钮 -->
+        <button class="jump-button" id="jumpButton" title="跳转到指定网站">
+            <i class="fas fa-external-link-alt"></i>
         </button>
         <div class="video-container">
             <div class="video-title">The Eternal East Wind - Documentary</div>
@@ -441,6 +473,7 @@
         const videoPage = document.getElementById('videoPage');
         const videoFrame = document.getElementById('videoFrame');
         const videoBackButton = document.getElementById('videoBackButton');
+        const jumpButton = document.getElementById('jumpButton'); // 新增：跳转按钮
         
         // 视频按钮功能
         videoButton.addEventListener('click', function() {
@@ -452,6 +485,11 @@
         videoBackButton.addEventListener('click', function() {
             videoFrame.src = '';
             videoPage.style.display = 'none';
+        });
+        
+        // 新增：跳转按钮功能
+        jumpButton.addEventListener('click', function() {
+            window.location.href = 'https://jovial-naiad-a3ecb6.netlify.app/';
         });
         
         // 传记按钮功能
